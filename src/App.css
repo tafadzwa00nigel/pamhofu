@@ -1,0 +1,41 @@
+/* --- Pamhofu Global Styles --- */
+
+/* 1. Ensure the app takes up the full width of the browser */
+html, body, #root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents unwanted side-scrolling */
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/* 2. Force buttons and cards to have sharp corners like your UI design */
+.btn, .card, .nav-link, .nav-item {
+  border-radius: 0 !important;
+}
+
+/* 3. Global Typography Tweaks */
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 4. Fix for the Navbar Hover effect */
+.navbar-nav .nav-link {
+  transition: color 0.2s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+  text-decoration: underline !important;
+  text-underline-offset: 5px;
+}
+
+/* 5. Custom Tracking for the Logo */
+.tracking-tighter {
+  letter-spacing: -1.5px;
+}
+
+/* 6. Utility for Full Width Containers */
+.mw-100 {
+  max-width: 100% !important;
+}
