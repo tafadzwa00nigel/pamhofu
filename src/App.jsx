@@ -1,8 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css'; // Essential Bootstrap CSS
 import './App.css'; // Any custom global styles
-import PamhofuNavbar from "./Components/Navbar"; 
+import PamhofuNavbar from "./Components/navbar.jsx"; 
 import Hero from "./Components/Hero"; 
 import ProductSection from "./Components/ProductSection";
+import Footer from './Components/Footer.jsx';
 
 function App() {
   return (
@@ -18,12 +19,7 @@ function App() {
         <ProductSection />
 
         {/* 4. Simple Footer Placeholder */}
-        <footer className="py-5 mt-5 border-top bg-light">
-          <div className="container text-center text-muted">
-            <p className="fw-bold text-dark mb-1">PAMHOFU</p>
-            <small>© 2026 Premium Cultivated Meats. All Rights Reserved.</small>
-          </div>
-        </footer>
+        <Footer />
       </main>
     </div>
   );

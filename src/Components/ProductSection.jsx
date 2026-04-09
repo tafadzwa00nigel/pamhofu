@@ -2,17 +2,38 @@ import { useState } from 'react';
 import { Container, Row, Col, Nav, Card } from 'react-bootstrap';
 
 const ProductSection = () => {
-  const [activeTab, setActiveTab] = useState('fresh');
+  // Set initial tab to 'beef'
+  const [activeTab, setActiveTab] = useState('beef');
 
-  // Sample data to simulate your "What's Fresh", "New Arrivals", etc.
+  // Updated product data based on your specific requirements
   const products = [
-    { id: 1, name: 'Premium Ribeye', desc: 'Marbled to perfection, cultivated for flavor.', category: 'fresh' },
-    { id: 2, name: 'Sirloin Strip', desc: 'Lean, tender, and ethically sourced.', category: 'fresh' },
-    { id: 3, name: 'Signature Wagyu', desc: 'The gold standard of cultivated beef.', category: 'new' },
-    { id: 4, name: 'Tenderloin Filet', desc: 'Buttery texture with a clean finish.', category: 'fresh' },
-    { id: 5, name: 'Bison Blend', desc: 'A robust, gamey profile for the bold.', category: 'special' },
-    { id: 6, name: 'Dry-Aged Medallion', desc: 'Deep flavor profile, aged 21 days.', category: 'special' },
+    // BEEF PRODUCTS
+    { id: 1, name: 'Chuck', desc: 'Versatile cut from the shoulder, perfect for pot roasts.', category: 'beef', img: '' },
+    { id: 2, name: 'Rib', desc: 'Rich, flavorful, and tender; home of the ribeye steak.', category: 'beef', img: '' },
+    { id: 3, name: 'Loin', desc: 'The source of the most tender cuts like filet mignon.', category: 'beef', img: '' },
+    { id: 4, name: 'Round', desc: 'Lean and economical, great for roasting or jerky.', category: 'beef', img: '' },
+    { id: 5, name: 'Brisket', desc: 'Tougher cut made tender through slow cooking.', category: 'beef', img: '' },
+    { id: 6, name: 'Plate and Flank', desc: 'Deep beefy flavor, ideal for fajitas or stir-fry.', category: 'beef', img: '' },
+
+    // GOAT MEAT PRODUCTS
+    { id: 7, name: 'Legs', desc: 'Meaty and lean, ideal for roasting whole.', category: 'goat', img: '' },
+    { id: 8, name: 'Loin', desc: 'Tender and juicy, perfect for quick chops.', category: 'goat', img: '' },
+    { id: 9, name: 'Rib', desc: 'Succulent and flavorful, great for BBQ.', category: 'goat', img: '' },
+    { id: 10, name: 'Shoulder', desc: 'Best for slow-braising or stews.', category: 'goat', img: '' },
+    { id: 11, name: 'Breast and Flank', desc: 'Thin and flavorful, great for rolling.', category: 'goat', img: '' },
+    { id: 12, name: 'Neck', desc: 'Rich in collagen, provides amazing depth to soups.', category: 'goat', img: '' },
+
+    // PORK PRODUCTS
+    { id: 13, name: 'Loin', desc: 'The leanest and most tender part of the pig.', category: 'pork', img: '' },
+    { id: 14, name: 'Belly', desc: 'Rich, fatty, and used for bacon or pork belly burnt ends.', category: 'pork', img: '' },
+    { id: 15, name: 'Leg', desc: 'Often cured into hams or roasted whole.', category: 'pork', img: '' },
+    { id: 16, name: 'Spare Ribs', desc: 'Classic BBQ cut with a balance of meat and fat.', category: 'pork', img: '' },
+    { id: 17, name: 'Jowl', desc: 'Incredibly flavorful, often used for guanciale.', category: 'pork', img: '' },
+    { id: 18, name: 'Hock', desc: 'Smoky and salty, perfect for flavoring beans or greens.', category: 'pork', img: '' },
   ];
+
+  // Logic to filter products based on the selected tab
+  const filteredProducts = products.filter(p => p.category === activeTab);
 
   return (
     <Container className="py-5" style={{ fontFamily: 'Arial, sans-serif' }}>
@@ -26,33 +47,36 @@ const ProductSection = () => {
       >
         <Nav.Item className="flex-fill text-center m-0">
           <Nav.Link 
-            eventKey="fresh" 
-            className={`rounded-0 py-3 fw-bold border-end border-dark ${activeTab === 'fresh' ? 'bg-dark text-white' : 'bg-light text-muted'}`}
+            eventKey="beef" 
+            className={`rounded-0 py-3 fw-bold border-end border-dark ${activeTab === 'beef' ? 'bg-primary text-white' : 'bg-light text-muted'}`}
+            style={activeTab === 'beef' ? { backgroundColor: '#44438E' } : {}}
           >
             BEEF
           </Nav.Link>
         </Nav.Item>
         <Nav.Item className="flex-fill text-center m-0">
           <Nav.Link 
-            eventKey="new" 
-            className={`rounded-0 py-3 fw-bold border-end border-dark ${activeTab === 'new' ? 'bg-dark text-white' : 'bg-light text-muted'}`}
+            eventKey="goat" 
+            className={`rounded-0 py-3 fw-bold border-end border-dark ${activeTab === 'goat' ? 'bg-primary text-white' : 'bg-light text-muted'}`}
+            style={activeTab === 'goat' ? { backgroundColor: '#44438E' } : {}}
           >
-            GOAT MEET
+            GOAT MEAT
           </Nav.Link>
         </Nav.Item>
         <Nav.Item className="flex-fill text-center m-0">
           <Nav.Link 
-            eventKey="special" 
-            className={`rounded-0 py-3 fw-bold ${activeTab === 'special' ? 'bg-dark text-white' : 'bg-light text-muted'}`}
+            eventKey="pork" 
+            className={`rounded-0 py-3 fw-bold ${activeTab === 'pork' ? 'bg-primary text-white' : 'bg-light text-muted'}`}
+            style={activeTab === 'pork' ? { backgroundColor: '#44438E' } : {}}
           >
             PORK
           </Nav.Link>
         </Nav.Item>
       </Nav>
 
-      {/* 2. THE PRODUCT GRID (3x2 as per wireframe) */}
+      {/* 2. THE PRODUCT GRID */}
       <Row className="g-4">
-        {products.map((product) => (
+        {filteredProducts.map((product) => (
           <Col md={6} lg={4} key={product.id}>
             <Card className="border-1 rounded-0 p-3 h-100 shadow-sm border-secondary">
               <Row className="g-0 align-items-center">
@@ -63,7 +87,8 @@ const ProductSection = () => {
                     className="bg-light border d-flex align-items-center justify-content-center text-muted fw-bold text-center"
                     style={{ aspectRatio: '1/1', fontSize: '10px' }}
                   >
-                    PRODUCT <br/> IMAGE
+                    {/* You can later replace this with <img src={product.img} /> */}
+                    {product.name} <br/> IMAGE
                   </div>
                 </Col>
 
