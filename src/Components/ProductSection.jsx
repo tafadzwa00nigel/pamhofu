@@ -66,8 +66,8 @@ const ProductSection = () => {
         <Nav.Item className="flex-fill text-center m-0">
           <Nav.Link 
             eventKey="beef" 
-            className={`rounded-0 py-3 fw-bold border-end border-dark ${activeTab === 'beef' ? 'bg-primary text-white' : 'bg-light text-muted'}`}
-            style={activeTab === 'beef' ? { backgroundColor: '#44438E' } : {}}
+            className={`rounded-0 py-3 fw-bold border-end border-dark ${activeTab === 'beef' ? 'text-white' : 'bg-light text-muted'}`}
+            style={activeTab === 'beef' ? { backgroundColor: '#43428D' } : {}}
           >
             BEEF
           </Nav.Link>
@@ -75,8 +75,8 @@ const ProductSection = () => {
         <Nav.Item className="flex-fill text-center m-0">
           <Nav.Link 
             eventKey="goat" 
-            className={`rounded-0 py-3 fw-bold border-end border-dark ${activeTab === 'goat' ? 'bg-primary text-white' : 'bg-light text-muted'}`}
-            style={activeTab === 'goat' ? { backgroundColor: '#44438E' } : {}}
+            className={`rounded-0 py-3 fw-bold border-end border-dark ${activeTab === 'goat' ? 'text-white' : 'bg-light text-muted'}`}
+            style={activeTab === 'goat' ? { backgroundColor: '#43428D' } : {}}
           >
             GOAT MEAT
           </Nav.Link>
@@ -84,8 +84,8 @@ const ProductSection = () => {
         <Nav.Item className="flex-fill text-center m-0">
           <Nav.Link 
             eventKey="pork" 
-            className={`rounded-0 py-3 fw-bold ${activeTab === 'pork' ? 'bg-primary text-white' : 'bg-light text-muted'}`}
-            style={activeTab === 'pork' ? { backgroundColor: '#44438E' } : {}}
+            className={`rounded-0 py-3 fw-bold ${activeTab === 'pork' ? 'text-white' : 'bg-light text-muted'}`}
+            style={activeTab === 'pork' ? { backgroundColor: '#43428D' } : {}}
           >
             PORK
           </Nav.Link>

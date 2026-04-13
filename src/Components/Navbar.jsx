@@ -30,11 +30,8 @@ const PamhofuNavbar = () => {
           <Nav className="mx-auto text-uppercase" style={{ fontSize: '0.85rem', fontWeight: '600' }}>
             <Nav.Link href="/" className="px-3 text-dark">Home</Nav.Link>
             <Nav.Link href="/OurMeat" className="px-3 text-dark">Our Meat</Nav.Link>
-            <Nav.Link href="#services" className="px-3 text-muted">
-              Services <small>▼</small>
-            </Nav.Link>
+            <Nav.Link href="/Services" className="px-3 text-dark"> Services</Nav.Link>
             <Nav.Link href="/Recipes" className="px-3 text-dark">Recipes</Nav.Link>
-            <Nav.Link href="#about" className="px-3 text-dark">About Us</Nav.Link>
             <Nav.Link href="/Contact" className="px-3 text-dark">Contact</Nav.Link>
           </Nav>
 

@@ -6,6 +6,7 @@ import {BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import OurMeat from './pages/OurMeat.jsx';
 import Recipes from './pages/Recipes.jsx';
 import ContactPage from './pages/Contact.jsx';
+import ServicesPage from './pages/Services.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -15,6 +16,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/OurMeat" element={<OurMeat />}/>
         <Route path="/Recipes" element={<Recipes />}/>
         <Route path="/Contact" element={<ContactPage />}/>
+        <Route path="/Services" element={<ServicesPage />}/>
       </Routes>
     </BrowserRouter>
     

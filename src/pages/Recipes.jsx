@@ -1,110 +1,83 @@
 import React from 'react';
-import PamhofuNavbar from "../Components/navbar.jsx"; 
-import MeatBanner from '../assets/banner-meat.webp';
-import Pot from '../assets/meatpot.png';
-import Footer from '../components/Footer.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import recipeBanner from '../assets/recipes-banner.webp';
+import PamhofuNavbar from '../Components/navbar';
+import Footer from '../Components/Footer';
 
 const Recipes = () => {
-  // Array of meat products to keep the JSX clean
-  const products = [
-    { id: 1, name: "Beef", price: "35.00" },
-    { id: 2, name: "Goat Ribs", price: "35.00" },
-    { id: 3, name: "Pork Belly", price: "35.00" },
-    { id: 4, name: "Beef", price: "35.00" },
-    { id: 5, name: "Cow Legs", price: "35.00" },
-    { id: 6, name: "Ox Tail", price: "35.00" },
-    { id: 7, name: "Goat Head", price: "35.00" },
-    { id: 8, name: "Beef", price: "35.00" },
-    { id: 9, name: "Cow Legs", price: "35.00" },
-    { id: 10, name: "Ox Tail", price: "35.00" },
-    { id: 11, name: "Goat Head", price: "35.00" },
-    { id: 12, name: "Beef", price: "35.00" },
-  ];
+  // Sample data for the cards
+  const recipes = [1, 2, 3];
 
   return (
-    <div className="bg-light min-vh-100">
-      <PamhofuNavbar />
+    <div className="container-fluid p-0">
+      <PamhofuNavbar/>
       {/* 1. TOP BANNER SECTION */}
-      <div className="position-relative w-100 overflow-hidden" style={{ height: '450px', backgroundColor: '#000' }}>
-        {/* PLACEHOLDER: Replace with your actual banner image */}
-        <img 
-          src= {MeatBanner} 
-          alt="Premium Meat Selection" 
-          className="w-100 h-100 object-fit-cover opacity-75"
-        />
-      </div>
+        <div className="position-relative w-100 overflow-hidden" style={{ height: '450px', backgroundColor: '#000' }}>
+          {/* PLACEHOLDER: Replace with your actual banner image */}
+          <img 
+            src= {recipeBanner} 
+            alt="Premium Meat Selection" 
+            className="w-100 h-100 object-fit-cover opacity-75"
+          />
+        </div>
 
-      {/* 2. PRODUCT GRID SECTION */}
-      <div className="container py-5">
-        <div className="row g-4">
-          {products.map((item, index) => (
-            <div key={index} className="col-12 col-sm-6 col-md-3">
-              <div className="card h-100 border-0 rounded-0 shadow-sm p-3">
-                {/* Price Tag */}
-                <h5 className="fw-bold mb-3">${item.price}</h5>
-                
-                {/* PLACEHOLDER: Product Image Box */}
-                <div className="bg-white border d-flex align-items-center justify-content-center mb-3" style={{ height: '200px' }}>
-                  <span className="text-muted text-uppercase tracking-wider small">Image</span>
+      {/* Recipes Cards Section */}
+      <section className="container py-5">
+        <div className="row justify-content-center mt-5">
+          {recipes.map((item) => (
+            <div key={item} className="col-lg-4 col-md-6 mb-5 d-flex justify-content-center">
+              <div 
+                className="position-relative p-4 d-flex flex-column justify-content-end"
+                style={{ 
+                  backgroundColor: '#4B4E97', 
+                  width: '280px', 
+                  height: '350px',
+                  borderRadius: '4px'
+                }}
+              >
+                {/* Overlapping Image Placeholder */}
+                <div 
+                  className="position-absolute d-flex align-items-center justify-content-center text-center p-2"
+                  style={{ 
+                    top: '-50px', 
+                    right: '10px', 
+                    width: '130px', 
+                    height: '130px', 
+                    backgroundColor: '#FFCC33',
+                    fontSize: '12px',
+                    fontWeight: 'bold',
+                    boxShadow: '0 4px 8px rgba(0,0,0,0.1)'
+                  }}
+                >
+                  IMAGE <br /> PLACEHOLDER
                 </div>
 
-                {/* Product Name */}
-                <h5 className="card-title text-secondary mb-3">{item.name}</h5>
+                {/* Star Ratings */}
+                <div className="mb-4">
+                  <div 
+                    className="bg-white d-inline-block px-2 py-1 rounded-pill"
+                    style={{ fontSize: '14px' }}
+                  >
+                    <span style={{ color: '#FFCC33' }}>★★★★</span>
+                  </div>
+                </div>
 
-                {/* Order Row */}
-                <div className="d-flex align-items-center gap-2">
-                  <button className="btn btn-sm text-white px-3" style={{ backgroundColor: '#3f4095' }}>
-                    Order
+                {/* Order Button */}
+                <div>
+                  <button 
+                    className="btn btn-light rounded-0 fw-bold px-3 py-1"
+                    style={{ fontSize: '12px', color: '#4B4E97' }}
+                  >
+                    ORDER NOW
                   </button>
-                  {/* The Yellow Accent Box */}
-                  <div style={{ width: '40px', height: '18px', backgroundColor: '#fcc419' }}></div>
                 </div>
               </div>
             </div>
           ))}
         </div>
-      </div>
-
-      {/* 3. CALL TO ACTION - BOTTOM RECIPE BANNER */}
-      <div className="mt-5 position-relative overflow-visible py-5" style={{ backgroundColor: '#3f4095' }}>
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-md-7 text-center text-md-start">
-              <h1 className="text-white fw-black display-4 m-0" style={{ letterSpacing: '2px', lineHeight: '1.1' }}>
-                TRY OUR TASTY <br /> NEW RECIPES
-              </h1>
-            </div>
-            
-            {/* The Floating Pot Image */}
-            <div className="col-md-5 position-relative">
-              <div className="recipe-image-wrapper">
-                {/* PLACEHOLDER: Replace with your transparent pot image */}
-                <img 
-                  src= {Pot} 
-                  alt="Delicious Recipe" 
-                  className="img-fluid position-absolute bottom-0 end-0 d-none d-md-block"
-                  style={{ transform: 'translateY(40%)', width: '450px', zIndex: '10' }}
-                />
-                {/* Mobile version of the pot image */}
-                <img 
-                  src={Pot} 
-                  alt="Delicious Recipe" 
-                  className="img-fluid d-md-none mt-4"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Added some custom spacing at the very bottom to allow for the floating pot height */}
-      <div style={{ height: '50px' }}></div>
-    <Footer />
-
-      
-      
+      </section>
+      <Footer/>
     </div>
-    
   );
 };
 
