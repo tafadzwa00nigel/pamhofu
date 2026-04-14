@@ -7,6 +7,8 @@ import OurMeat from './pages/OurMeat.jsx';
 import Recipes from './pages/Recipes.jsx';
 import ContactPage from './pages/Contact.jsx';
 import ServicesPage from './pages/Services.jsx';
+import ProductSection from './Components/ProductSection.jsx';
+import ProductDetails from './pages/ProductDetails.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -17,6 +19,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="/Recipes" element={<Recipes />}/>
         <Route path="/Contact" element={<ContactPage />}/>
         <Route path="/Services" element={<ServicesPage />}/>
+        <Route path="/" element={<ProductSection />} />
+        <Route path="/product/:slug" element={<ProductDetails />} />
       </Routes>
     </BrowserRouter>
     
