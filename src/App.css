@@ -39,3 +39,22 @@ h1, h2, h3, h4, h5, h6 {
 .mw-100 {
   max-width: 100% !important;
 }
+
+/* --- Fix for Wholesale Price Table Transparency --- */
+.wholesale-table, 
+.wholesale-table th, 
+.wholesale-table td, 
+.wholesale-table tr {
+    background-color: transparent !important;
+    background: transparent !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    color: white !important;
+    --bs-table-bg: transparent !important; /* This kills the Bootstrap variable */
+    --bs-table-accent-bg: transparent !important;
+}
+
+/* Ensure the responsive wrapper doesn't have a background */
+.table-responsive {
+    background-color: transparent !important;
+    border: none !important;
+}

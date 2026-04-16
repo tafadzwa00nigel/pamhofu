@@ -4,6 +4,8 @@ import PamhofuNavbar from "./Components/navbar.jsx";
 import Hero from "./Components/Hero"; 
 import ProductSection from "./Components/ProductSection";
 import Footer from './Components/Footer.jsx';
+import WhatsAppButton from './Components/WhatsAppButton';
+import AboutSection from './Components/AboutUs.jsx';
 
 function App() {
   return (
@@ -18,7 +20,14 @@ function App() {
         {/* 3. Product Grid with Tabs */}
         <ProductSection />
 
-        {/* 4. Simple Footer Placeholder */}
+        {/* 5. About Us */}
+        <AboutSection/>
+
+         {/* 4. Loating whatsapp button */}
+        <WhatsAppButton/>
+
+      
+        
         <Footer />
       </main>
     </div>

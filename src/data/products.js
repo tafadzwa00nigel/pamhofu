@@ -1,11 +1,10 @@
 // src/data/products.js
 
-import beefChuck from '../assets/productImages/beefChuck.jpg';
-import beefBrisket from '../assets/productImages/beefBrisket.jpg';
-import beefLoin from '../assets/productImages/beefLoin.jpg';
-import beefRibs from '../assets/productImages/beefRibs.jpg';
-import beefFlank from '../assets/productImages/beefFlank.jpg';
-import beefRound from '../assets/productImages/beefRound.jpg';
+// Updated Beef Imports
+// Ensure you have these images in your folder or rename these imports to match your files
+import beefSide from '../assets/productImages/beefSide.jpg'; 
+import beefForequarter from '../assets/productImages/beefForequarter.jpg';
+import beefHindquarter from '../assets/productImages/beefHindquarter.jpg';
 
 import goatFlank from '../assets/productImages/goatFlank.jpg';
 import goatLegs from '../assets/productImages/goatLegs.jpg';
@@ -22,60 +21,33 @@ import porkRibs from '../assets/productImages/porkRibs.jpg';
 import porkTrotters from '../assets/productImages/porkTrotters.jpg';
 
 export const products = [
-  // BEEF PRODUCTS
+  // BEEF PRODUCTS (Abattoir Wholesale Cuts)
   { 
     id: 1, 
-    slug: 'beef-chuck',
-    name: 'Chuck', 
-    desc: 'Versatile cut from the shoulder, perfect for pot roasts.', 
+    slug: 'beef-side',
+    name: 'Beef Side', 
+    desc: 'A full half-carcass containing both the forequarter and hindquarter.', 
     category: 'beef', 
-    img: beefChuck,
-    details: 'The beef chuck is a cut of beef that comes from the shoulder and neck of the cow. It is known for its rich flavor and balance of meat and fat.'
+    img: beefSide,
+    details: 'A side of beef is half of a dressed carcass, split vertically down the backbone. It includes all the primary cuts and is the standard unit for bulk purchasing.'
   },
   { 
     id: 2, 
-    slug: 'beef-ribs',
-    name: 'Rib', 
-    desc: 'Rich, flavorful, and tender; home of the ribeye steak.', 
+    slug: 'beef-forequarter',
+    name: 'Forequarter', 
+    desc: 'The front section of the side, known for rich, flavorful roasting cuts.', 
     category: 'beef', 
-    img: beefRibs,
-    details: 'Rib cuts are prized for their marbling and tenderness. This section provides the classic Ribeye and Prime Rib.'
+    img: beefForequarter,
+    details: 'The forequarter includes the neck, shoulder (chuck), brisket, and front ribs. These cuts are traditionally used for slow-cooking, braising, and high-quality mince.'
   },
   { 
     id: 3, 
-    slug: 'beef-loin',
-    name: 'Loin', 
-    desc: 'The source of the most tender cuts like filet mignon.', 
+    slug: 'beef-hindquarter',
+    name: 'Hindquarter', 
+    desc: 'The rear section containing premium steak cuts and lean roasts.', 
     category: 'beef', 
-    img: beefLoin,
-    details: 'Located below the backbone, the loin is the most tender part of the animal, yielding premium steaks like Sirloin and T-Bone.'
-  },
-  { 
-    id: 4, 
-    slug: 'beef-round',
-    name: 'Round', 
-    desc: 'Lean and economical, great for roasting or jerky.', 
-    category: 'beef', 
-    img: beefRound,
-    details: 'The round consists of the hind leg. Because these muscles are used for movement, the meat is leaner and tougher, ideal for slow roasting.'
-  },
-  { 
-    id: 5, 
-    slug: 'beef-brisket',
-    name: 'Brisket', 
-    desc: 'Tougher cut made tender through slow cooking.', 
-    category: 'beef', 
-    img: beefBrisket,
-    details: 'Brisket comes from the breast of the cow. It requires low and slow heat to break down the connective tissue into tender perfection.'
-  },
-  { 
-    id: 6, 
-    slug: 'beef-flank',
-    name: 'Plate and Flank', 
-    desc: 'Deep beefy flavor, ideal for fajitas or stir-fry.', 
-    category: 'beef', 
-    img: beefFlank,
-    details: 'These belly cuts are long and flat. They have a coarse grain and intense flavor, perfect for marinating and quick grilling.'
+    img: beefHindquarter,
+    details: 'The hindquarter contains the most tender cuts, including the loin, fillet, and rump. It is highly valued for its high percentage of grilling steaks and lean meat.'
   },
 
   // GOAT MEAT PRODUCTS

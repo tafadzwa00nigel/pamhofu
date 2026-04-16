@@ -3,26 +3,15 @@ import PamhofuNavbar from "../Components/navbar.jsx";
 import MeatBanner from '../assets/banner-meat.webp';
 import Pot from '../assets/meatpot.png';
 import Footer from '../components/Footer.jsx';
+import MeatWholesaleSection from '../Components/MeatWholesaleSection.jsx';
+import WhatsAppButton from '../Components/WhatsAppButton.jsx';
+
+
 
 const OurMeat = () => {
-  // Array of meat products to keep the JSX clean
-  const products = [
-    { id: 1, name: "Beef", price: "35.00" },
-    { id: 2, name: "Goat Ribs", price: "35.00" },
-    { id: 3, name: "Pork Belly", price: "35.00" },
-    { id: 4, name: "Beef", price: "35.00" },
-    { id: 5, name: "Cow Legs", price: "35.00" },
-    { id: 6, name: "Ox Tail", price: "35.00" },
-    { id: 7, name: "Goat Head", price: "35.00" },
-    { id: 8, name: "Beef", price: "35.00" },
-    { id: 9, name: "Cow Legs", price: "35.00" },
-    { id: 10, name: "Ox Tail", price: "35.00" },
-    { id: 11, name: "Goat Head", price: "35.00" },
-    { id: 12, name: "Beef", price: "35.00" },
-  ];
 
   return (
-    <div className="bg-light min-vh-100">
+    <div className="min-vh-100">
       <PamhofuNavbar />
       {/* 1. TOP BANNER SECTION */}
       <div className="position-relative w-100 overflow-hidden" style={{ height: '450px', backgroundColor: '#000' }}>
@@ -34,36 +23,8 @@ const OurMeat = () => {
         />
       </div>
 
-      {/* 2. PRODUCT GRID SECTION */}
-      <div className="container py-5">
-        <div className="row g-4">
-          {products.map((item, index) => (
-            <div key={index} className="col-12 col-sm-6 col-md-3">
-              <div className="card h-100 border-0 rounded-0 shadow-sm p-3">
-                {/* Price Tag */}
-                <h5 className="fw-bold mb-3">${item.price}</h5>
-                
-                {/* PLACEHOLDER: Product Image Box */}
-                <div className="bg-white border d-flex align-items-center justify-content-center mb-3" style={{ height: '200px' }}>
-                  <span className="text-muted text-uppercase tracking-wider small">Image</span>
-                </div>
+      <MeatWholesaleSection/>
 
-                {/* Product Name */}
-                <h5 className="card-title text-secondary mb-3">{item.name}</h5>
-
-                {/* Order Row */}
-                <div className="d-flex align-items-center gap-2">
-                  <button className="btn btn-sm text-white px-3" style={{ backgroundColor: '#3f4095' }}>
-                    Order
-                  </button>
-                  {/* The Yellow Accent Box */}
-                  <div style={{ width: '40px', height: '18px', backgroundColor: '#fcc419' }}></div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* 3. CALL TO ACTION - BOTTOM RECIPE BANNER */}
       <div className="mt-5 position-relative overflow-visible py-5" style={{ backgroundColor: '#3f4095' }}>
@@ -96,9 +57,9 @@ const OurMeat = () => {
           </div>
         </div>
       </div>
+       {/* 4. Loating whatsapp button */}
+        <WhatsAppButton/>
 
-      {/* Added some custom spacing at the very bottom to allow for the floating pot height */}
-      <div style={{ height: '50px' }}></div>
     <Footer />
 
       

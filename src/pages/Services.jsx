@@ -29,11 +29,9 @@ const ServicesPage = () => {
 
   return (
     <div className="container-fluid p-0">
-        <PamhofuNavbar />
-      {/* FIX 1: Component Check 
-          If you haven't imported PamhofuNavbar yet, comment it out to see if the page loads!
-      */}
+        
       {/* <PamhofuNavbar /> */}
+        <PamhofuNavbar />
 
       {/* 1. TOP BANNER */}
       <header 
@@ -45,8 +43,9 @@ const ServicesPage = () => {
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
+
+        
       >
-        {/* Banner content */}
       </header>
 
       {/* NAVIGATION BAR SECTION */}
@@ -54,7 +53,6 @@ const ServicesPage = () => {
         <div className="container">
           <div className="row text-center fw-bold text-uppercase" style={{ letterSpacing: '1px', fontSize: '0.9rem' }}>
             <div className="col-4">Abattoir Service</div>
-            <div className="col-4 border-start border-end border-secondary">Storage Service</div>
             <div className="col-4">Butchery</div>
           </div>
         </div>

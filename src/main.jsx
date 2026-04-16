@@ -9,6 +9,7 @@ import ContactPage from './pages/Contact.jsx';
 import ServicesPage from './pages/Services.jsx';
 import ProductSection from './Components/ProductSection.jsx';
 import ProductDetails from './pages/ProductDetails.jsx';
+import WhatsAppButton from './Components/WhatsAppButton';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
