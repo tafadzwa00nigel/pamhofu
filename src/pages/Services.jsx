@@ -6,6 +6,7 @@ import BeefCuts from '../assets/beef-cuts.webp';
 import PorkCuts from '../assets/pork-cuts.webp';
 import GoatCuts from '../assets/goat-cuts.webp';
 import Footer from '../Components/Footer';
+import Chatbot from '../Components/Chatbot.jsx';
 
 
 const ServicesPage = () => {
@@ -54,6 +55,7 @@ const ServicesPage = () => {
           <div className="row text-center fw-bold text-uppercase" style={{ letterSpacing: '1px', fontSize: '0.9rem' }}>
             <div className="col-4">Abattoir Service</div>
             <div className="col-4">Butchery</div>
+            <div className="col-4">Transport / Delivery</div>
           </div>
         </div>
       </nav>
@@ -121,6 +123,11 @@ const ServicesPage = () => {
                       Inquire Now
                     </button>
                   </div>
+
+
+                  {/*   ChatBot  */}
+                  <Chatbot/>
+
                 </div>
 
               </div>

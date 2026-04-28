@@ -5,7 +5,7 @@ import Pot from '../assets/meatpot.png';
 import Footer from '../components/Footer.jsx';
 import MeatWholesaleSection from '../Components/MeatWholesaleSection.jsx';
 import WhatsAppButton from '../Components/WhatsAppButton.jsx';
-
+import Chatbot from '../Components/Chatbot.jsx';
 
 
 const OurMeat = () => {
@@ -57,8 +57,9 @@ const OurMeat = () => {
           </div>
         </div>
       </div>
-       {/* 4. Loating whatsapp button */}
-        <WhatsAppButton/>
+
+      {/* 4. Chatbot */}
+      <Chatbot/>
 
     <Footer />
 

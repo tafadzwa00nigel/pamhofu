@@ -6,6 +6,8 @@ import ProductSection from "./Components/ProductSection";
 import Footer from './Components/Footer.jsx';
 import WhatsAppButton from './Components/WhatsAppButton';
 import AboutSection from './Components/AboutUs.jsx';
+import Chatbot from './Components/Chatbot.jsx';
+import ServicesSection from "./components/PamhofuServices";
 
 function App() {
   return (
@@ -16,6 +18,9 @@ function App() {
       <main>
         {/* 2. Hero Section with Video Background */}
         <Hero />
+        
+        {/* 3. Services Section */}
+        <ServicesSection />
 
         {/* 3. Product Grid with Tabs */}
         <ProductSection />
@@ -23,8 +28,8 @@ function App() {
         {/* 5. About Us */}
         <AboutSection/>
 
-         {/* 4. Loating whatsapp button */}
-        <WhatsAppButton/>
+         {/* 4. Chatbot */}
+        <Chatbot/>
 
       
         

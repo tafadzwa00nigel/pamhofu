@@ -35,17 +35,6 @@ const PamhofuNavbar = () => {
             <Nav.Link href="/Contact" className="px-3 text-dark">Contact</Nav.Link>
           </Nav>
 
-          {/* 3. BUTTON - Pinned Right */}
-          <div className="d-flex align-items-center justify-content-end">
-            <Button 
-              variant="outline-dark" 
-              className="rounded-0 px-4 py-2 fw-bold"
-              style={{ border: '2px solid black', letterSpacing: '1px' }}
-            >
-              SHOP NOW
-            </Button>
-          </div>
-
         </Navbar.Collapse>
       </Container>
     </Navbar>
