@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import mhofu from '../assets/icons/Mhofu.webp';
 
+const API_BASE = 'https://pamhofuabattoir.co.zw/api';
+
 const SESSION_ID = Math.random().toString(36).substring(7);
 
 const Chatbot = () => {
@@ -63,7 +65,7 @@ const Chatbot = () => {
     setIsTyping(true);
 
     try {
-      const response = await fetch('http://localhost:8000/chat', {
+      const response = await fetch(`${API_BASE}/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -125,7 +127,7 @@ const Chatbot = () => {
         setIsTyping(true);
 
         try {
-          const res = await fetch('http://localhost:8000/transcribe', {
+          const res = await fetch(`${API_BASE}/transcribe`, {
             method: 'POST',
             body: formData,
           });
