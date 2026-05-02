@@ -153,20 +153,51 @@ function ContactFields({ stepNumber, customerName, setCustomerName,
 }
 
 // ─── WHATSAPP SUBMISSION HELPER ───────────────────────────────────
-const sendToWhatsApp = async (payload) => {
+// ─── UPDATED WHATSAPP SUBMISSION HELPER ───────────────────────────
+const sendToWhatsApp = (payload) => {
   try {
-    const response = await fetch("http://localhost:8000/submit-booking", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-    const result = await response.json();
-    if (result.status.includes("Forwarded")) {
-      alert("Order sent successfully to WhatsApp!");
+    // Your specific number formatted for the API (no '+' or spaces)
+    const businessNumber = "263780772151"; 
+
+    // Build the message string
+    let message = `*📦 NEW SERVICE REQUEST*\n`;
+    message += `--------------------------------\n`;
+    message += `*Service:* ${payload.type.replace("_", " ")}\n`;
+    message += `*Customer:* ${payload.customerName}\n`;
+    message += `*Contact:* ${payload.customerPhone}\n`;
+    message += `--------------------------------\n`;
+
+    // Dynamic details based on service type
+    if (payload.type === "ABATTOIR") {
+      message += `*Animal Type:* ${payload.animal.toUpperCase()}\n`;
+      message += `*Quantity:* ${payload.qty}\n`;
+    } 
+    else if (payload.type === "BUTCHERY_ORDER") {
+      message += `*Ordered Items:*\n`;
+      payload.items.forEach(item => {
+        message += `• ${item.name} (${item.kg}kg)\n`;
+      });
+    } 
+    else if (payload.type === "TRANSPORT") {
+      message += `*Pickup:* ${payload.pickup}\n`;
+      message += `*Qty to Transport:* ${payload.qty}\n`;
     }
+
+    message += `--------------------------------\n`;
+    message += `*ESTIMATED TOTAL: $${payload.total}*\n`;
+    message += `--------------------------------\n`;
+    message += `_Sent from website form._`;
+
+    // Encode for URL and trigger the app/web interface
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${businessNumber}?text=${encodedMessage}`;
+
+    // Open in a new tab/window
+    window.open(whatsappUrl, "_blank");
+
   } catch (error) {
-    console.error("Submission error:", error);
-    alert("Failed to send order. Check if your FastAPI server is running.");
+    console.error("WhatsApp Redirect Error:", error);
+    alert("Could not open WhatsApp. Please check your connection.");
   }
 };
 
